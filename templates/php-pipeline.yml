@@ -1,0 +1,23 @@
+include:
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/php-install.yml'
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/code-scan.yml'
+
+stages:
+  - install
+  - code_scan
+
+install:
+  stage: install
+  tags:
+    - k8s
+  extends: .install
+
+code_scan:
+  stage: code_scan
+  tags:
+    - k8s
+  extends: .code_scan

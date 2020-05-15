@@ -1,0 +1,23 @@
+include:
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/python-install.yml'
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/code-scan.yml'
+
+stages:
+  - install
+  - code_scan
+
+install:
+  stage: install
+  tags:
+    - k8s
+  extends: .install
+
+code_analysis:
+  stage: code_scan
+  tags:
+    - k8s
+  extends: .code_scan

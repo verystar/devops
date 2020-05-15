@@ -1,0 +1,34 @@
+include:
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/go-build.yml'
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/go-test.yml'
+  - project: 'verystar/devops'
+    ref: master
+    file: 'jobs/code-scan.yml'
+
+stages:
+  - build
+  # - test
+  - code_scan
+
+build:
+  stage: build
+  tags:
+    - k8s
+  extends: .build
+
+test:
+  stage: test
+  tags:
+    - k8s
+  extends: .test
+  allow_failure: true
+
+code_scan:
+  stage: code_scan
+  tags:
+    - k8s
+  extends: .code_scan
