@@ -1,0 +1,8 @@
+.docker-build:
+  stage: docker-build
+  tags:
+    - build
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWD  $REGISTRY_SERVER
+    - docker build -t $REGISTRY_SERVER/$PROJECT_GRUP/${IMAGE_NAME} -f ${DOCKER_FILE_PATH} .
+    - docker push $REGISTRY_SERVER/$PROJECT_GRUP/${IMAGE_NAME}

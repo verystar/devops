@@ -1,0 +1,19 @@
+.code_scan:
+  stage: code_scan
+  image: registry.cn-hangzhou.aliyuncs.com/verystar/sonar-scanner:prod-v0.0.1
+  tags:
+    - scan
+  script:
+    - pwd
+    - echo ${CI_PROJECT_NAME}/${CI_PROJECT_NAMESPACE}
+    - "sonar-scanner  -Dsonar.projectKey=${CI_PROJECT_NAMESPACE}-${CI_PROJECT_NAME} \
+                      -Dsonar.projectName=${CI_PROJECT_NAMESPACE}-${CI_PROJECT_NAME} \
+                      -Dsonar.projectVersion=${CI_COMMIT_REF_NAME} \
+                      -Dsonar.ws.timeout=30 \
+                      -Dsonar.projectDescription=${CI_PROJECT_TITLE} \
+                      -Dsonar.links.homepage=${CI_PROJECT_URL} \
+                      -Dsonar.sources='.' \
+                      -Dsonar.sourceEncoding=UTF-8 \
+                      -Dsonar.exclusions=**/*_test.go,**/vendor/** \
+                      -Dsonar.test.inclusions=**/*_test.go \
+                      -Dsonar.test.exclusions=**/vendor/**"

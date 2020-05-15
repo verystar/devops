@@ -1,0 +1,8 @@
+.build:
+  stage: build
+  image: registry.cn-hangzhou.aliyuncs.com/verystar/golang:prod-v0.0.1
+  tags:
+    - build
+  script:
+    - go mod tidy
+    - go build -o app

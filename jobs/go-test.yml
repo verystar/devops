@@ -1,0 +1,6 @@
+.test:
+  stage: test
+  tags:
+    - test
+  script:
+    - go test .
