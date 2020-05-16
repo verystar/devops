@@ -4,5 +4,5 @@
   tags:
     - install
   script: 
-    - pip config set global.cache-dir "/home/gitlab-runner/cache/pip"
+    - pip config set global.cache-dir ${BUILD_CACHE_DIR}/pip
     - pip install -r ./requirements.txt

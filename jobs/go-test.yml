@@ -4,5 +4,4 @@
     - test
   script:
     - export GOPATH=${BUILD_CACHE_DIR}/go
-    - echo $GOPATH
     - go test .

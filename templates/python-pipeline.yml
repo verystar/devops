@@ -2,6 +2,9 @@ include:
   - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/python-install.yml'
   - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/code-scan.yml'
 
+variables:
+  BUILD_CACHE_DIR: "/home/gitlab-runner/cache"
+
 stages:
   - install
   - code_scan

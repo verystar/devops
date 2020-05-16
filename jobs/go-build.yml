@@ -5,6 +5,5 @@
     - build
   script:
     - export GOPATH=${BUILD_CACHE_DIR}/go
-    - echo $GOPATH
     - go mod tidy
     - go build -o app
