@@ -4,5 +4,7 @@
   tags:
     - build
   script:
+    - export GOPATH=/home/gitlab-runner/cache/go
+    - echo $GOPATH
     - go mod tidy
     - go build -o app
