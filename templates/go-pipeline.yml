@@ -1,17 +1,11 @@
 include:
-  - project: 'verystar/devops'
-    ref: master
-    file: 'jobs/go-build.yml'
-  - project: 'verystar/devops'
-    ref: master
-    file: 'jobs/go-test.yml'
-  - project: 'verystar/devops'
-    ref: master
-    file: 'jobs/code-scan.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-build.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-test.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/code-scan.yml'
 
 stages:
   - build
-  # - test
+  - test
   - code_scan
 
 build:

@@ -1,10 +1,6 @@
 include:
-  - project: 'verystar/devops'
-    ref: master
-    file: 'jobs/python-install.yml'
-  - project: 'verystar/devops'
-    ref: master
-    file: 'jobs/code-scan.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/python-install.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/code-scan.yml'
 
 stages:
   - install
