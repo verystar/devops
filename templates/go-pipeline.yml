@@ -1,9 +1,9 @@
 image: registry.cn-hangzhou.aliyuncs.com/verystar/golang:prod-v0.0.1
 
 include:
-  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-build.yml'
-  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-test.yml'
-  - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/code-scan.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/develop/jobs/go-build.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/develop/jobs/go-test.yml'
+  - remote: 'https://raw.githubusercontent.com/verystar/devops/develop/jobs/code-scan.yml'
 
 stages:
   - build
