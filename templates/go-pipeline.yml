@@ -5,6 +5,9 @@ include:
   - remote: 'https://raw.githubusercontent.com/verystar/devops/develop/jobs/go-test.yml'
   - remote: 'https://raw.githubusercontent.com/verystar/devops/develop/jobs/code-scan.yml'
 
+variables:
+  BUILD_CACHE_DIR: "/home/gitlab-runner/cache"
+
 stages:
   - build
   - test
