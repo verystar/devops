@@ -1,3 +1,5 @@
+image: registry.cn-hangzhou.aliyuncs.com/verystar/golang:prod-v0.0.1
+
 include:
   - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-build.yml'
   - remote: 'https://raw.githubusercontent.com/verystar/devops/master/jobs/go-test.yml'

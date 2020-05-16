@@ -6,8 +6,8 @@
   script:
     - pwd
     - echo ${CI_PROJECT_NAME}/${CI_PROJECT_NAMESPACE}
-    - "sonar-scanner  -Dsonar.projectKey=${CI_PROJECT_NAMESPACE}-${CI_PROJECT_NAME} \
-                      -Dsonar.projectName=${CI_PROJECT_NAMESPACE}-${CI_PROJECT_NAME} \
+    - "sonar-scanner  -Dsonar.projectKey=${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME} \
+                      -Dsonar.projectName=${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME} \
                       -Dsonar.projectVersion=${CI_COMMIT_REF_NAME} \
                       -Dsonar.ws.timeout=30 \
                       -Dsonar.projectDescription=${CI_PROJECT_TITLE} \
